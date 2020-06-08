@@ -81,4 +81,11 @@ finalscript = compbit + text[j:] #Adding last bit of text after last word catego
 print (finalscript)
 speech = input("type 'yes' if you would like the computer to read the script out loud for you")
 
-
+from gtts import gTTS
+import os
+language = 'en' #language en=english
+#slow=false means wanting audio to be played in high speed
+output - gTTS(text=speech, lang=language, slow=false)
+output.save("output.mp3")
+#the start space file name is the default program to start the speech
+os.system("start output.mp3")
