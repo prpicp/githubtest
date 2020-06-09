@@ -1,4 +1,4 @@
-libs = ["Today, every student has a computer small enough to fit into his <noun>. He can solve any math problem by simply pushing the computer’s little <plno>. Computers can add, multiply, divide, and <verb>. They can also <verb> better than a human. Some computers are <bodp>. Others have / <adje> screen that shows all kinds of <plno> and <adje> figures.",
+libs = ["Today, / every / student has a computer small enough to fit into his <noun>. He can solve any math problem by simply pushing the computer’s little <plno>. Computers can add, multiply, divide, and <verb>. They can also <verb> better than a human. Some computers are <bodp>. Others have / <adje> screen that shows all kinds of <plno> and <adje> figures.",
         "This summer I went to band camp in <city> for <numb> days. I made friends with <cele> and <cele>. I learned how to play the <inst>. My favourite part of camp was learning to play <song> in c minor. My least favourite part was my bunkmate’s snoring which was flat and it sounded like / <inst>. During the talent show, I played <song> on the <inst> in the style of <genr>, while doing the <danc>. One camper <veed> during my performance! I can’t wait to share my <adje> photos with my friends and give them / <adje> performance!",
         "My name is <name> and I’ve known the graduate for <numb> years. I <veed> all the way from <city> to celebrate this day. I can still remember when you were in <numb> grade. How the time has flown by. My best advice is ‘Be sure to <verb> before you <verb>, but don’t ever <verb> your professor.’ On your first day of <noun> don’t forget to <verb>! On Friday nights don’t <verb> at least until you have / <noun>. College is <verb> so you will need <noun>. I wish you <noun> and <noun> on this new step in life.",
         "There are many kinds of <adje> animals that <verb> on a farm. For example, <anis> and <anis> <verb> eggs, and <food> comes from farm-raised <anis> and <anis> make <liqu> that people drink and also use to make <food> and <food>. Some farm animals like <anis> and <anis> have soft <noun>, which is used to make <clot> and <plno>.",
@@ -81,20 +81,16 @@ for f in text:
 script = compbit + text[j:] #Adding last bit of text after last word category
 tempscript = script
 k = -1
-h = 0
 for s in script:
     k += 1
     if s == "/" :
-        firstpart = tempscript[h:k - 1]
-        secondpart = tempscript[k + 2:]
+        firstpart = tempscript[:k-1]
+        secondpart = script[k+1:]
         if tempscript[k+2] == "a":
             aan = "an"
-            h = k+2
         else:
             aan = "a"
-            h = k+1
         tempscript = firstpart + aan + secondpart
     else:
         ''
-
 print (script)
