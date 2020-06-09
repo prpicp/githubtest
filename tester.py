@@ -1,8 +1,15 @@
-pip install gtts
+pip3 install gTTS
 from gtts import gTTS
 import os
-text = "Global warming is the long-term rise in the average temperature of the Earth’s climate system"
+text_to_read = "tester tester for a test"
 language = 'en'
-speech = gTTS(text = text, lang = language, slow = False)
-speech.save("text.mp3")
-os.system("start text.mp3")
+slow_audio_speed = False
+filename = "my_file.mp3"
+
+def reading_from_string():
+    audio_created = gTTS(text=text_to_read, lang=language, slow=slow_audio_speed)
+    audio_created.save(filename)
+    os.system(f'start {filename}')
+
+if __name__ == "__main__":
+    reading_from_string()
